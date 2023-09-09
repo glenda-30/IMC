@@ -1,9 +1,11 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author labor
@@ -27,9 +29,9 @@ public class IMC_IU extends javax.swing.JFrame {
     private void initComponents() {
 
         lblPESO = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtP = new javax.swing.JTextField();
         lblALTURA = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtA = new javax.swing.JTextField();
         btnCALCULAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,8 +59,8 @@ public class IMC_IU extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCALCULAR)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                    .addComponent(txtP)
+                    .addComponent(txtA, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -67,11 +69,11 @@ public class IMC_IU extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPESO)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblALTURA)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addComponent(btnCALCULAR)
                 .addContainerGap(71, Short.MAX_VALUE))
@@ -82,6 +84,10 @@ public class IMC_IU extends javax.swing.JFrame {
 
     private void btnCALCULARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCALCULARActionPerformed
         // TODO add your handling code here:
+        double A = Double.parseDouble(txtA.getText());
+        double P = Double.parseDouble(txtP.getText());
+        double IMC = P / (A * A);
+        JOptionPane.showMessageDialog(this, "la IMC es :" + IMC);
     }//GEN-LAST:event_btnCALCULARActionPerformed
 
     /**
@@ -121,9 +127,9 @@ public class IMC_IU extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCALCULAR;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblALTURA;
     private javax.swing.JLabel lblPESO;
+    private javax.swing.JTextField txtA;
+    private javax.swing.JTextField txtP;
     // End of variables declaration//GEN-END:variables
 }
